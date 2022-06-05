@@ -23,12 +23,18 @@
 
 <main>
 	<div>
-		<label for='inArea'>Markdownを入力:</label>
-		<button on:click={clearInput}>クリア</button>
+		<div class='contents'>
+			<label for='inArea'>Markdownを入力:</label>
+			<div class='btn'>
+				<button on:click={clearInput}>クリア</button>
+			</div>
+		</div>
 		<textarea bind:value={inputMarkdown} id='inArea'></textarea>
 	</div>
 	<div>
-		<button on:click={copyToClipBoard}>クリップボードにコピー</button>
+		<div class='btn'>
+			<button on:click={copyToClipBoard}>クリップボードにコピー</button>
+		</div>
 		<textarea value={outputTextile} id='outArea'></textarea>
 	</div>
 </main>
@@ -44,6 +50,15 @@
 	textarea {
 		width: 100%;
 		height: 200px;
+	}
+
+	.contents {
+		display: flex;
+	}
+
+	.btn {
+		margin-left: auto;
+		text-align: right;
 	}
 
 	@media (min-width: 640px) {
