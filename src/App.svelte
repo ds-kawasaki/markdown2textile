@@ -5,10 +5,11 @@
 
 	function convert(orgString: string): string {
 		let buffer: string = orgString;
-		buffer = buffer.replace(/^### /gm, 'h3. '); //  見出し変換 
+		buffer = buffer.replace(/^#### /gm, 'h4. '); //  見出し変換 
+		buffer = buffer.replace(/^### /gm, 'h3. ');
 		buffer = buffer.replace(/^## /gm, 'h2. ');
 		buffer = buffer.replace(/^# /gm, 'h1. ');
-		buffer = buffer.replace(/(h[1-3]\. .*)(\r\n|\r|\n)(?!(\r\n|\r|\n))/g, '$1$2$2$3');  //  見出しの次の行に空行追加
+		buffer = buffer.replace(/(h[1-4]\. .*)(\r\n|\r|\n)(?!(\r\n|\r|\n))/g, '$1$2$2$3');  //  見出しの次の行に空行追加
 		return buffer;
 	}
 	function clearInput() {
