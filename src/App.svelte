@@ -33,8 +33,11 @@
 		<textarea bind:value={inputMarkdown} id='inArea'></textarea>
 	</div>
 	<div>
-		<div class='btn'>
-			<button on:click={copyToClipBoard}>クリップボードにコピー</button>
+		<div class='contents'>
+			<label for='outArea'>textile</label>
+			<div class='btn'>
+				<button on:click={copyToClipBoard}>クリップボードにコピー</button>
+			</div>
 		</div>
 		<textarea value={outputTextile} id='outArea'></textarea>
 	</div>
